@@ -2,28 +2,31 @@ FROM node:18-alpine
 
 WORKDIR /app
 
-# Copy backend
+# Copy backend dependencies
 COPY server/package*.json ./server/
-WORKDIR /app/server
-RUN npm ci --only=production
+RUN cd server && npm ci --only=production
 
-# Copy frontend
-WORKDIR /app
+# Copy frontend dependencies
 COPY client/package*.json ./client/
-WORKDIR /app/client
-RUN npm ci
+RUN cd client && npm ci
 
 # Copy source code
 COPY server ./server
 COPY client ./client
 
 # Build frontend
-WORKDIR /app/client
-RUN npm run build
+RUN cd client && npm run build
 
-# Expose ports
-EXPOSE 5000 3000
+# Copy built frontend to backend public folder
+RUN mkdir -p server/public && cp -r client/build/* server/public/
 
-# Start backend (frontend served via Express static middleware)
+# Expose HF Spaces port
+EXPOSE 7860
+
+# Set environment variables for HF Spaces
+ENV NODE_ENV=production
+ENV PORT=7860
+
+# Start backend (serves frontend from public directory)
 WORKDIR /app/server
 CMD ["node", "index.js"]
