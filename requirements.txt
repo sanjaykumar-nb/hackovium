@@ -1,2 +1,0 @@
-# Empty - Node.js is main runtime
-# app.py just orchestrates startup
