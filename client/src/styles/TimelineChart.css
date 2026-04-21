@@ -1,0 +1,8 @@
+/* Timeline Chart Styles */
+.timeline-chart {
+  width: 100%;
+}
+
+.timeline-chart .recharts-surface {
+  overflow: visible;
+}

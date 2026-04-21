@@ -1,0 +1,22 @@
+{
+  "name": "future-you-ai",
+  "version": "1.0.0",
+  "description": "Multi-agent AI life decision simulator",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm start\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "start": "node server/index.js"
+  },
+  "keywords": [
+    "AI",
+    "multi-agent",
+    "career",
+    "decision",
+    "simulation"
+  ],
+  "author": "Hackathon Team",
+  "license": "MIT"
+}

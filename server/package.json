@@ -1,0 +1,19 @@
+{
+  "name": "future-you-ai-server",
+  "version": "1.0.0",
+  "description": "Multi-agent simulation backend",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "@anthropic-ai/sdk": "^0.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
