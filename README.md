@@ -1,3 +1,13 @@
+---
+title: FUTURE YOU AI
+emoji: 🚀
+colorFrom: blue
+colorTo: purple
+sdk: docker
+app_port: 7860
+pinned: true
+---
+
 # 🚀 FUTURE YOU AI - Multi-Agent Life Decision Simulator
 
 A hackathon-winning AI application that empowers users to make major life decisions by simulating multiple possible futures using collaborative AI agents.
